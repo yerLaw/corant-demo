@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.corant</groupId>
+    <artifactId>corant-demo</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>corant demo</name>
+    <properties>
+        <version.corant>1.2.5-SNAPSHOT</version.corant>
+        <revision>1.0.0-SNAPSHOT</revision>
+    </properties>
+    <modules>
+        <module>corant-caffeine-demo</module>
+        <module>corant-microprofile-restclient-demo</module>
+    </modules>
+
+</project>
