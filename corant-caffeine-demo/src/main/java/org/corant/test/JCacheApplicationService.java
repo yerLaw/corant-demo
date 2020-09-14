@@ -18,7 +18,6 @@ import javax.enterprise.context.ApplicationScoped;
  */
 @ApplicationScoped
 public class JCacheApplicationService {
-
   static Logger logger = LoggerFactory.getLogger(JCacheApplicationService.class);
 
   @CachePut(cacheName = "myCache")
