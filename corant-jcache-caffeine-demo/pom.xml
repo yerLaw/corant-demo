@@ -8,16 +8,11 @@
         <artifactId>corant-demo</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>corant-caffeine-demo</artifactId>
+    <artifactId>corant-jcache-caffeine-demo</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.corant</groupId>
             <artifactId>corant-config</artifactId>
-            <version>${version.corant}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.corant</groupId>
-            <artifactId>corant-suites-cache-memory</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>

@@ -13,6 +13,7 @@
         <dependency>
             <groupId>org.eclipse.microprofile.rest.client</groupId>
             <artifactId>microprofile-rest-client-api</artifactId>
+            <version>1.4.0</version>
         </dependency>
     </dependencies>
 </project>

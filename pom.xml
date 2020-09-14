@@ -13,7 +13,7 @@
         <revision>1.0.0-SNAPSHOT</revision>
     </properties>
     <modules>
-        <module>corant-caffeine-demo</module>
+        <module>corant-jcache-caffeine-demo</module>
         <module>corant-microprofile-restclient-demo</module>
         <module>corant-microprofile-lra-demo</module>
     </modules>

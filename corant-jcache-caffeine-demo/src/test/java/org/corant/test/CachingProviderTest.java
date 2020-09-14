@@ -1,11 +1,13 @@
 package org.corant.test;
 
+import com.github.benmanes.caffeine.jcache.configuration.CaffeineConfiguration;
 import org.corant.context.SURI;
 import org.corant.devops.test.unit.CorantJUnit4ClassRunner;
 import org.corant.devops.test.unit.RunConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import javax.cache.Cache;
 import javax.cache.CacheManager;
 import javax.cache.spi.CachingProvider;
 import javax.inject.Inject;
@@ -29,6 +31,10 @@ public class CachingProviderTest {
   public void cacheManager() {
     cacheManager.getURI();
     cacheManager.getCacheNames();
+    Cache<Object, Object> cache = cacheManager.getCache("newCache");
+    cache.put("123", "hello");
+    Object o = cache.get("123");
+    System.out.println("o = " + o);
   }
 
   @Test

@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jerry-impl</artifactId>
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.corant</groupId>
         <artifactId>jerry</artifactId>
@@ -33,11 +34,13 @@
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-jaxrs2</artifactId>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <optional>false</optional>
+            <version>5.1.48</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
