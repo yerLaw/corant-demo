@@ -15,6 +15,7 @@
     <modules>
         <module>corant-caffeine-demo</module>
         <module>corant-microprofile-restclient-demo</module>
+        <module>corant-microprofile-lra-demo</module>
     </modules>
 
 </project>
