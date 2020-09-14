@@ -35,9 +35,4 @@ public class JCacheApplicationService {
     logger.info("not found value in cache , now invoke method and cached returned value");
     return null;
   }
-
-  @PostConstruct
-  protected void postConstruct() {
-    logger.info("postConstruct===========");
-  }
 }
