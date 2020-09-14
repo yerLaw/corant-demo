@@ -13,7 +13,7 @@ import javax.ws.rs.core.Application;
  * @since
  */
 @ApplicationScoped
-@ApplicationPath("/test")
+@ApplicationPath("/")
 public class App extends Application {
 
   public static void main(String[] args) {
