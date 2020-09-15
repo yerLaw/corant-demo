@@ -1,6 +1,5 @@
 package org.corant.test;
 
-import com.github.benmanes.caffeine.jcache.configuration.CaffeineConfiguration;
 import org.corant.context.SURI;
 import org.corant.devops.test.unit.CorantJUnit4ClassRunner;
 import org.corant.devops.test.unit.RunConfig;
@@ -31,7 +30,7 @@ public class CachingProviderTest {
   public void cacheManager() {
     cacheManager.getURI();
     cacheManager.getCacheNames();
-    Cache<Object, Object> cache = cacheManager.getCache("newCache");
+    Cache<Object, Object> cache = cacheManager.getCache("apple");
     cache.put("123", "hello");
     Object o = cache.get("123");
     System.out.println("o = " + o);
