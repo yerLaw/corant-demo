@@ -2,7 +2,7 @@
 
 # Tutorial
 
-##JCache annotations usage
+## JCache annotations usage
 ```java
   @CachePut(cacheName = "myCache")
   public String cachePut(@CacheValue String value, @CacheKey String key) {
@@ -20,7 +20,7 @@
   }
 ```
 First, you should config your cache in conf file.
-##Caffeine configurations in corant
+## Caffeine configurations in corant
 You can config cache directly or its configuration's file path in `META-INF/application.properties` 
 * cache configuration's file path in `META-INF/application.properties`:
 ```
@@ -32,7 +32,7 @@ Then you can in `META-INF/caffeine.properties` config your cache.Format `.conf/.
 caffeine.jcache.myCache.policy.maximum.size=123
 ```
 See the [reference.conf](https://github.com/ben-manes/caffeine/blob/master/jcache/src/main/resources/reference.conf) for more details.
-##JCache programmatic API
+## Cache programmatic API
 You can `@Inject` CacheManager or CachingProvider.
 ```java
 public class CachingProviderTest {
