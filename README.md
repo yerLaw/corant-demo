@@ -1,2 +1,2 @@
-# Corant-demo
-based on https://github.com/finesoft/corant
+# corant-demo
+based on [corant](https://github.com/finesoft/corant)
