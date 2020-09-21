@@ -1,7 +1,15 @@
 # Corant JCache Caffeine Demo
 
 # Tutorial
-
+## Add JCache Caffeine dependency
+```
+<dependency>
+    <groupId>org.corant</groupId>
+    <artifactId>corant-suites-jcache-caffeine</artifactId>
+    <version>1.2.5-SNAPSHOT</version>
+</dependency>
+```
+more details see the `pom.xml`
 ## JCache annotations usage
 ```java
   @CachePut(cacheName = "myCache")
