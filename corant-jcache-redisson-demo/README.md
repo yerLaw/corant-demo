@@ -2,7 +2,7 @@
 # Requirements
 1. java 8 (or newer)
 2. maven 2.2.1 (or newer)
-3. redis (this demo:5.0.5)
+3. redis 5.0.5(this demo)
 # Tutorial
 ## Add JCache Redisson dependency
 ```

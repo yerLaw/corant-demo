@@ -62,7 +62,7 @@ eg.
 ```
 caffeine.jcache.apple.policy.maximum.size=345
 ```
-Caffeine will create `apple` named cache when you used `CacheManager.getCache`.
+Caffeine will create `apple` named cache when you used `CacheManager.getCache("apple")`.
 
 
 
