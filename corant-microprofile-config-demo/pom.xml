@@ -9,13 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>corant-jcache-redisson-demo</artifactId>
+    <artifactId>corant-microprofile-config-demo</artifactId>
+
     <dependencies>
-        <dependency>
-            <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jcache-redisson</artifactId>
-            <version>${version.corant}</version>
-        </dependency>
         <dependency>
             <groupId>org.corant</groupId>
             <artifactId>corant-suites-jaxrs-resteasy</artifactId>
@@ -24,6 +20,11 @@
         <dependency>
             <groupId>org.corant</groupId>
             <artifactId>corant-suites-logging</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-microprofile-config</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
@@ -43,6 +44,11 @@
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
+            <artifactId>corant-context</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
             <artifactId>corant-shared</artifactId>
             <version>${version.corant}</version>
         </dependency>
@@ -53,5 +59,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 
 </project>
