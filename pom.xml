@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <name>corant demo</name>
     <properties>
-        <version.corant>1.3.RELEASE</version.corant>
+        <version.corant>9999-SNAPSHOT</version.corant>
         <revision>1.0.0-SNAPSHOT</revision>
     </properties>
     <modules>
