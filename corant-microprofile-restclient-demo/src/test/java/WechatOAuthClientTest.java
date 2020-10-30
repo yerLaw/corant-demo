@@ -37,7 +37,7 @@ public class WechatOAuthClientTest {
 
   @Test
   public void test() {
-    Map<?, ?> response =
+    String response =
         wechatOAuthClient.grantAccessToken("appid", "secret", "code", "authorization_code");
     System.out.println("response = " + response);
   }

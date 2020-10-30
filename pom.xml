@@ -18,6 +18,7 @@
         <module>corant-microprofile-lra-demo</module>
         <module>corant-jcache-redisson-demo</module>
         <module>corant-microprofile-config-demo</module>
+        <module>corant-alipay-demo</module>
     </modules>
 
 </project>
