@@ -33,7 +33,7 @@ import java.util.Map;
 @Produces(MediaType.APPLICATION_JSON)
 public class PayEndpoint {
 
-  private static AlipayClient alipayClient;
+  private AlipayClient alipayClient;
   @Inject AlipayConfig alipayConfig;
 
   @Path("/notify")
