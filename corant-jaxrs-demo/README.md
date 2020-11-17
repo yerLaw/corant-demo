@@ -3,7 +3,7 @@
 # Tutorial
 ## 1. Prerequisites
 * maven 2.2.1 (or newer)
-* JDK 8 or 11+
+* JDK 11+
 ## 2. Add JAX-RS component
 * Add dependency.
 ```

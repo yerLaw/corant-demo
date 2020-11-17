@@ -2,7 +2,7 @@
 [corant-config](https://github.com/finesoft/corant/tree/master/corant-config) implements [microprofile-config](https://github.com/eclipse/microprofile-config)
 
 # Requirements
-1. java 8 (or newer)
+1. java 11+
 2. maven 2.2.1 (or newer)
 # Tutorial
 ## Add Corant Microprofile Config dependency

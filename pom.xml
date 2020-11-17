@@ -19,6 +19,7 @@
         <module>corant-jcache-redisson-demo</module>
         <module>corant-microprofile-config-demo</module>
         <module>corant-alipay-demo</module>
+        <module>corant-jaxrs-demo</module>
     </modules>
 
 </project>

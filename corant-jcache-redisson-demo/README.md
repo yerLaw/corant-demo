@@ -1,6 +1,6 @@
 # Corant JCache Redisson Demo
 # Requirements
-1. java 8 (or newer)
+1. java 11+
 2. maven 2.2.1 (or newer)
 3. redis 5.0.5(this demo)
 # Tutorial
