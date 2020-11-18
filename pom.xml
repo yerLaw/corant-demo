@@ -11,7 +11,10 @@
     <properties>
         <version.corant>9999-SNAPSHOT</version.corant>
         <revision>1.0.0-SNAPSHOT</revision>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
     <modules>
         <module>corant-jcache-caffeine-demo</module>
         <module>corant-microprofile-restclient-demo</module>
@@ -20,6 +23,7 @@
         <module>corant-microprofile-config-demo</module>
         <module>corant-alipay-demo</module>
         <module>corant-jaxrs-demo</module>
+        <module>corant-swagger-demo</module>
     </modules>
 
 </project>
