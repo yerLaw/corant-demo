@@ -45,6 +45,4 @@ rs.cors.enabled=true
 ```
 * You need a swagger UI server.Check [this](https://github.com/swagger-api/swagger-ui/blob/HEAD/docs/usage/installation.md) to install.
 * Run the app and visit http://192.168.100.200:9001/?url=http://localhost:8080/openapi.json (192.168.100.200:9001 is my swagger UI server) and you should see the following.
-```
-
-```
+![image](https://github.com/sushuaihao/corant-demo/blob/master/corant-swagger-demo/img/demo.png)
