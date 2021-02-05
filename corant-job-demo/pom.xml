@@ -49,8 +49,23 @@
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
+            <artifactId>corant-suites-jms-artemis</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
             <artifactId>corant-suites-quartz</artifactId>
             <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.2</version>
         </dependency>
     </dependencies>
 

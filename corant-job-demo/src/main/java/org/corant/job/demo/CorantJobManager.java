@@ -13,10 +13,11 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
+import java.time.Instant;
+import java.util.Date;
 import java.util.Set;
 
 import static org.quartz.JobBuilder.newJob;
-import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 import static org.quartz.TriggerBuilder.newTrigger;
 
 /**
@@ -30,19 +31,24 @@ public class CorantJobManager {
 
   protected final Set<CorantJobMetaData> jobMetaDatas = Sets.newConcurrentHashSet();
   @Inject protected CorantJobExtension extension;
+  @Inject CDIJobFactory cdiJobFactory;
+  private Scheduler sched;
 
   protected void onPostCorantReadyEvent(@Observes PostCorantReadyEvent adv)
       throws SchedulerException {
     for (final CorantJobMetaData metaData : jobMetaDatas) {
       SchedulerFactory schedFact = new org.quartz.impl.StdSchedulerFactory();
-      Scheduler sched = schedFact.getScheduler();
+      sched = schedFact.getScheduler();
+      sched.setJobFactory(cdiJobFactory);
       sched.start();
-      JobDetail job = newJob((Class<? extends Job>) metaData.getMethod().getClazz()).build();
+      JobDetail job =
+          newJob((Class<? extends Job>) metaData.getMethod().getClazz())
+              .usingJobData("orderId", 123L)
+              .build();
       Trigger trigger =
           newTrigger()
               .withIdentity(metaData.getTriggerKey(), metaData.getTriggerGroup())
-              .startNow()
-              .withSchedule(simpleSchedule().withIntervalInSeconds(10).repeatForever())
+              .startAt(Date.from(Instant.now().plusSeconds(120)))
               .build();
       sched.scheduleJob(job, trigger);
     }
