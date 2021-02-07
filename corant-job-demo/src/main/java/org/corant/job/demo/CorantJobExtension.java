@@ -22,21 +22,20 @@ import static java.util.Collections.newSetFromMap;
  */
 public class CorantJobExtension implements Extension {
 
-  protected final Set<ContextualMethodHandler> jobMethods =
-      newSetFromMap(new ConcurrentHashMap<>());
+  protected final Set<CorantJobMetaData> metaDatas = newSetFromMap(new ConcurrentHashMap<>());
 
-  public Set<ContextualMethodHandler> getJobMethods() {
-    return Collections.unmodifiableSet(jobMethods);
+  public Set<CorantJobMetaData> getJobMetadata() {
+    return Collections.unmodifiableSet(metaDatas);
   }
 
   protected void onBeforeShutdown(@Observes @Priority(0) BeforeShutdown bs) {
-    jobMethods.clear();
+    metaDatas.clear();
   }
 
   protected void onProcessAnnotatedType(
       @Observes @WithAnnotations({CorantJob.class}) ProcessAnnotatedType<?> pat) {
     final Class<?> beanClass = pat.getAnnotatedType().getJavaClass();
     ContextualMethodHandler.fromDeclared(beanClass, m -> m.isAnnotationPresent(CorantJob.class))
-        .forEach(cm -> jobMethods.add(cm));
+        .forEach(cm -> metaDatas.add(CorantJobMetaData.of(cm)));
   }
 }
