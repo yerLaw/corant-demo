@@ -27,11 +27,14 @@
     </RollingFile>
   </Appenders>
   <Loggers>
-    <Root level="debug">
+    <Root level="INFO">
       <AppenderRef ref="Console"/>
     </Root>
-<!--    <Logger name="org.corant" level="debug" additivity="false">-->
-<!--      <AppenderRef ref="Console"/>-->
-<!--    </Logger>-->
+    <Logger name="com.arjuna.jta" level="TRACE" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="com.arjuna.ats.arjuna" level="TRACE" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
   </Loggers>
 </Configuration>
