@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <name>corant demo</name>
     <properties>
-        <version.corant>1.5.7.RELEASE</version.corant>
+        <version.corant>1.6.0-SNAPSHOT</version.corant>
         <revision>1.0.0-SNAPSHOT</revision>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -26,6 +26,7 @@
         <module>corant-jaxrs-demo</module>
         <module>corant-swagger-demo</module>
         <module>corant-job-demo</module>
+        <module>corant-jms-demo</module>
     </modules>
 
 </project>

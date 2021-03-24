@@ -1,6 +1,6 @@
 package org.corant.test;
 
-import org.corant.context.SURI;
+import org.corant.context.qualifier.SURI;
 import org.corant.devops.test.unit.CorantJUnit4ClassRunner;
 import org.corant.devops.test.unit.RunConfig;
 import org.junit.Test;

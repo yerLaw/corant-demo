@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>corant-demo</artifactId>
+        <groupId>org.corant</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>corant-jms-demo</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-jms-artemis</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-jta-narayana</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-jms-shared</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-jaxrs-resteasy</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-logging</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-suites-webserver-undertow</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-kernel</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-shared</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-devops-test-unit</artifactId>
+            <version>${version.corant}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
