@@ -14,32 +14,32 @@
     <dependencies>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jms-artemis</artifactId>
+            <artifactId>corant-modules-jms-artemis</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jta-narayana</artifactId>
+            <artifactId>corant-modules-jta-narayana</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jms-shared</artifactId>
+            <artifactId>corant-modules-jms-shared</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jaxrs-resteasy</artifactId>
+            <artifactId>corant-modules-jaxrs-resteasy</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-logging</artifactId>
+            <artifactId>corant-modules-logging</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-webserver-undertow</artifactId>
+            <artifactId>corant-modules-webserver-undertow</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>

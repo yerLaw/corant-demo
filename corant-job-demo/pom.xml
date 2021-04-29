@@ -34,7 +34,7 @@
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-logging</artifactId>
+            <artifactId>corant-modules-logging</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
@@ -44,30 +44,30 @@
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-datasource-shared</artifactId>
+            <artifactId>corant-modules-datasource-shared</artifactId>
             <optional>true</optional>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-datasource-agroal</artifactId>
+            <artifactId>corant-modules-datasource-agroal</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jta-narayana</artifactId>
-            <version>${version.corant}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.corant</groupId>
-            <artifactId>corant-suites-quartz-embeddable</artifactId>
+            <artifactId>corant-modules-jta-narayana</artifactId>
             <version>${version.corant}</version>
         </dependency>
 
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jndi</artifactId>
+            <artifactId>corant-modules-quartz-embeddable</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-jndi</artifactId>
             <version>${version.corant}</version>
         </dependency>
 

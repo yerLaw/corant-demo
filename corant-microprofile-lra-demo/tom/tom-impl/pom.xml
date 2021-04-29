@@ -17,17 +17,17 @@
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-flyway</artifactId>
+            <artifactId>corant-modules-flyway</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-jms-artemis</artifactId>
+            <artifactId>corant-modules-jms-artemis</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>
             <groupId>org.corant</groupId>
-            <artifactId>corant-suites-mongodb</artifactId>
+            <artifactId>corant-modules-mongodb</artifactId>
             <version>${version.corant}</version>
         </dependency>
         <dependency>

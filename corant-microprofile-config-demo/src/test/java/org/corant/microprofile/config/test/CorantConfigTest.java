@@ -1,6 +1,6 @@
 package org.corant.microprofile.config.test;
 
-import org.corant.config.declarative.DeclarativeConfigResolver;
+import org.corant.config.declarative.ConfigInstances;
 import org.corant.devops.test.unit.CorantJUnit4ClassRunner;
 import org.corant.devops.test.unit.RunConfig;
 import org.corant.microprofile.config.demo.App;
@@ -39,7 +39,7 @@ public class CorantConfigTest {
   @Test
   public void configMapValue() {
     Map<String, PetsConfigurationDemo> demoMap =
-        DeclarativeConfigResolver.resolveMulti(PetsConfigurationDemo.class);
+        ConfigInstances.resolveMulti(PetsConfigurationDemo.class);
     PetsConfigurationDemo dog = demoMap.get("dog");
     Map<String, String> dogMapValue = dog.getMapValue();
     String value1 = dogMapValue.get("key1");
@@ -71,7 +71,7 @@ public class CorantConfigTest {
   @Test
   public void testResolveConfig() {
     Map<String, PetsConfigurationDemo> demoMap =
-        DeclarativeConfigResolver.resolveMulti(PetsConfigurationDemo.class);
+        ConfigInstances.resolveMulti(PetsConfigurationDemo.class);
     PetsConfigurationDemo dog = demoMap.get("dog");
     String dogName = dog.getName();
     assertEquals("small dog", dogName);

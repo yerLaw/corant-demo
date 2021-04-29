@@ -3,7 +3,6 @@ package org.corant.test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.PostConstruct;
 import javax.cache.annotation.CacheKey;
 import javax.cache.annotation.CachePut;
 import javax.cache.annotation.CacheResult;

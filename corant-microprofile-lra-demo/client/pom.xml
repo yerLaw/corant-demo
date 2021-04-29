@@ -10,11 +10,6 @@
         <version>${revision}</version>
     </parent>
     <dependencies>
-        <dependency>
-            <groupId>org.asosat</groupId>
-            <artifactId>asosat-ddd</artifactId>
-            <version>${version.corant}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.corant</groupId>
@@ -25,6 +20,18 @@
             <groupId>org.corant</groupId>
             <artifactId>jerry-client</artifactId>
             <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.asosat</groupId>
+            <artifactId>asosat-ddd</artifactId>
+            <version>1.5.10-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-kernel</artifactId>
+            <version>${version.corant}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
