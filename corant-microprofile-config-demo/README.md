@@ -93,7 +93,14 @@ my.pets.weight=3.34
 my.pets.hobbies=sleep
 ```
 
-
+## Corant EL Expression Simple Usage
+```
+#source.get('{property key's name which defined in your application.properties}')
+abc=#{source.get('my.pets.dog.name').toUpperCase()}
+random.digit=#{Randoms.randomLong(5,20)}
+strings=#{Strings.trim(' abc ')}
+```
+more details see the `org.corant.config.expression.ConfigELProcessor`
 
 
 

@@ -69,6 +69,31 @@ public class CorantConfigTest {
   }
 
   @Test
+  public void testEl() {
+    String abc = config.getValue("abc", String.class);
+    assertEquals("SMALL DOG", abc);
+  }
+
+  @Test
+  public void testEl1() {
+    String randomDigit = config.getValue("random.digit", String.class);
+    System.out.println("random.digit = " + randomDigit);
+  }
+
+  @Test
+  public void testEl2() {
+    String strings = config.getValue("strings", String.class);
+    System.out.println("strings = " + strings);
+    assertEquals("abc", strings);
+  }
+
+  @Test
+  public void testGetVar() {
+    String strings = config.getValue("someserver.port.get", String.class);
+    assertEquals("9087", strings);
+  }
+
+  @Test
   public void testResolveConfig() {
     Map<String, PetsConfigurationDemo> demoMap =
         ConfigInstances.resolveMulti(PetsConfigurationDemo.class);
