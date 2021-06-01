@@ -27,7 +27,22 @@ more details see the `pom.xml`
     return null;
   }
 ```
-First, you should config your cache in conf file.
+Necessary, you must add annotation's Interceptors in `beans.xml`.
+```xml
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
+       bean-discovery-mode="annotated">
+    <interceptors>
+        <class>org.jsr107.ri.annotations.cdi.CacheResultInterceptor</class>
+        <class>org.jsr107.ri.annotations.cdi.CachePutInterceptor</class>
+        <class>org.jsr107.ri.annotations.cdi.CacheRemoveEntryInterceptor</class>
+        <class>org.jsr107.ri.annotations.cdi.CacheRemoveAllInterceptor</class>
+    </interceptors>
+</beans>
+```
+
+
 ## Caffeine configurations in corant
 You can config cache directly or its configuration's file path in `META-INF/application.properties` 
 * cache configuration's file path in `META-INF/application.properties`:

@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <name>corant demo</name>
     <properties>
-        <version.corant>1.6.2-SNAPSHOT</version.corant>
+        <version.corant>1.7.0-SNAPSHOT</version.corant>
         <revision>1.0.0-SNAPSHOT</revision>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
