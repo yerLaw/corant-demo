@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query-mappings xmlns="http://corant.org/schema/nqms"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://corant.org/schema/nqms http://corant.org/schema/nqms/nqms_1_0.xsd">
+
+    <parameters-mapping>
+        <entry type="java.time.Instant" name="createdTimeStart"/>
+        <entry type="java.time.Instant" name="createdTimeEnd"/>
+    </parameters-mapping>
+
+
+    <query name="Profiles.queryUser">
+        <script>
+            <![CDATA[
+				SELECT 
+					t.id,
+					t.vn,
+					t.createdTime,
+					t.modifiedTime,
+					t.archived,
+					t.org,
+					t.archivedTime,
+					t.archivedLog,
+					t.archivistId,
+					t.archivistName,
+					t.department,
+					t.gender,
+					t.approvalStatus,
+					t.name,
+					t.mobileNumber,
+					t.mailAddress,
+					t.position,
+					t.remark,
+					o.id AS orgId,
+					o.name AS orgName,
+					t.createdTime as registeredTime
+				FROM 
+					ct_user t
+					LEFT JOIN 
+					(
+						SELECT a.entrustingPartyId,a.responsiblePartyId FROM ct_accountability a
+						WHERE a.declaredType='PTY_EMP_REL' AND a.archived = 0 
+						GROUP BY entrustingPartyId,responsiblePartyId 
+					) x ON t.id = x.responsiblePartyId
+					LEFT JOIN ct_org o ON o.id = x.entrustingPartyId
+				WHERE
+				   1=1
+				<#if employerPartyId??>
+					AND o.id = ${TM(employerPartyId)}
+				</#if>     
+				<#if approvalStatus??>
+					AND t.approvalStatus = ${TM(approvalStatus)}
+				</#if>  
+				<#if createdTimeStart??>
+					AND t.createdTime >= ${TM(createdTimeStart)}
+				</#if>
+				<#if createdTimeEnd??>
+					AND t.createdTime <= ${TM(createdTimeEnd)}
+				</#if>
+				<#if keyword?has_content>
+					AND (t.name LIKE CONCAT('%', ${TM(keyword)}, '%') OR t.mobileNumber LIKE CONCAT('%', ${TM(keyword)}, '%') OR o.name LIKE CONCAT('%', ${TM(keyword)}, '%'))
+				</#if>
+				ORDER BY
+					t.createdTime desc					
+			]]>
+        </script>
+        <fetch-query reference-query="Profiles.getAccountPrincipals" inject-property-name="userPrincipals">
+            <parameter name="userId" source="R" source-name="id"/>
+        </fetch-query>
+        <fetch-query reference-query="Profiles.getUserRoles" eager-inject="false"
+                     max-fetch-size="0">
+            <parameter name="userId" source="R" source-name="id"/>
+            <injection-script>
+                <![CDATA[
+				(function(rs,frs){ 
+					for each (var r in rs) {
+						var LinkedHashSet = Java.type('java.util.LinkedHashSet');
+						var id = Java.type('java.lang.String');
+						id = r.get("id");
+						print(id);
+						var userRoles = new LinkedHashSet();
+						for each (var fr in frs){
+							if(id.equals(fr.get("responsiblePartyId"))){
+								userRoles.add(fr.get("name"));
+							}
+						}
+						r.put("userRoles",userRoles);
+					}
+				})(rs,frs); 						        
+				]]>
+            </injection-script>
+        </fetch-query>
+        <fetch-query reference-query="Profiles.getOrgRoles" eager-inject="false"
+                     max-fetch-size="0">
+            <parameter name="orgId" source="R" source-name="orgId"/>
+            <injection-script>
+                <![CDATA[
+				(function(rs,frs){ 
+					for each (var r in rs) {
+						var LinkedHashSet = Java.type('java.util.LinkedHashSet');
+						var orgRoles = new LinkedHashSet();
+						var id = Java.type('java.lang.String');
+						id = r.get("orgId");
+						print(id);
+						for each (var fr in frs){
+							if(id!=null && id.equals(fr.get("orgId"))){
+								orgRoles.add(fr.get("name"));
+							}
+						}
+						r.put("orgRoles",orgRoles);
+					}
+				})(rs,frs);         
+				]]>
+            </injection-script>
+        </fetch-query>
+    </query>
+
+    <query name="Profiles.getUserRoles">
+        <script>
+            <![CDATA[
+				SELECT 
+					t.responsiblePartyRole AS name
+					,t.responsiblePartyId
+				FROM 
+					ct_accountability t
+				WHERE
+				    t.declaredType='PTY_EMP_REL'
+				    AND
+				    t.responsiblePartyId IN (${TM(userId)})
+				ORDER BY
+					responsiblePartyRole asc
+			]]>
+        </script>
+    </query>
+
+    <query name="Profiles.getOrgRoles">
+        <script>
+            <![CDATA[
+				SELECT DISTINCT t.name,t.orgId FROM (	
+						SELECT 
+							t.responsiblePartyRole AS name
+							,t.responsiblePartyId AS orgId
+						FROM 
+							ct_accountability t
+						WHERE
+							<#if orgId??>
+						    	t.responsiblePartyId IN (${TM(orgId)})
+						    <#else>
+						    	1<>1
+						    </#if>
+						UNION ALL
+						SELECT 
+							t.entrustingPartyRole AS name
+							,t.entrustingPartyId AS orgId
+						FROM 
+							ct_accountability t
+						WHERE
+							<#if orgId??>
+						   		t.entrustingPartyId IN (${TM(orgId)})
+						   	<#else>
+						    	1<>1
+						    </#if>
+				) t			    
+						ORDER BY
+							t.name asc
+			]]>
+        </script>
+    </query>
+
+    <query name="Profiles.getAccountPrincipals">
+        <script>
+            <![CDATA[
+                   SELECT
+                        cuap.principal,
+                        cuap.type,
+                        IF( t.credential IS NULL, 0, 1 ) AS hadPwd
+                    FROM
+                        ct_user_auths t
+                        LEFT JOIN ct_user_auth_principals cuap ON cuap.authId = t.id
+                    WHERE
+                        t.type = 'ACCOUNT' and t.userId = ${TM(userId)}
+			]]>
+        </script>
+    </query>
+
+</query-mappings>

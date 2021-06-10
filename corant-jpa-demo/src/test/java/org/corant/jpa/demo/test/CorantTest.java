@@ -3,7 +3,7 @@ package org.corant.jpa.demo.test;
 import org.corant.devops.test.unit.CorantJUnit4ClassRunner;
 import org.corant.devops.test.unit.RunConfig;
 import org.corant.jpa.demo.App;
-import org.corant.suites.jpa.shared.JPAService;
+import org.corant.modules.jpa.shared.JPAService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

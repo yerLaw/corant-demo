@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>corant-demo</artifactId>
+        <groupId>org.corant</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>corant-query-demo</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-logging</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-microprofile-config</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-webserver-undertow</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-kernel</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-context</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-shared</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-datasource-agroal</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-devops-test-unit</artifactId>
+            <version>${version.corant}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
+        </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-query-sql</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
+    </dependencies>
+
+</project>

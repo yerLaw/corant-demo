@@ -28,6 +28,7 @@
         <module>corant-job-demo</module>
         <module>corant-jms-demo</module>
         <module>corant-jpa-demo</module>
+        <module>corant-query-demo</module>
     </modules>
 
 </project>
