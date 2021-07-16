@@ -29,6 +29,8 @@
         <module>corant-jms-demo</module>
         <module>corant-jpa-demo</module>
         <module>corant-query-demo</module>
+        <module>corant-experiment</module>
+        <module>corant-aliyun-oss-demo</module>
     </modules>
 
 </project>

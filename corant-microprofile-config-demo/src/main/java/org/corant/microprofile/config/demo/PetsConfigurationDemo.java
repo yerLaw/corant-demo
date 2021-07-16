@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.corant.context.Instances.resolve;
+import static org.corant.context.Beans.resolve;
 import static org.corant.shared.util.Classes.tryAsClass;
 import static org.corant.shared.util.Empties.isNotEmpty;
 import static org.corant.shared.util.Strings.isNoneBlank;
@@ -28,11 +28,15 @@ public class PetsConfigurationDemo implements DeclarativeConfig {
   private String name;
   private Integer age;
   private Double weight;
+
   @ConfigKeyItem(defaultValue = "false")
   private Boolean isWeak;
+
   private List<String> hobbies = new ArrayList<>();
+
   @ConfigKeyItem(pattern = DeclarativePattern.PREFIX)
   private Map<String, String> mapValue = new HashMap<>();
+
   private List<PetsHandler> petsHandlers = new ArrayList<>();
 
   public Integer getAge() {

@@ -27,11 +27,12 @@
     </RollingFile>
   </Appenders>
   <Loggers>
-    <Root level="debug">
+    <Root level="error">
       <AppenderRef ref="Console"/>
     </Root>
-<!--    <Logger name="org.corant" level="debug" additivity="false">-->
-<!--      <AppenderRef ref="Console"/>-->
-<!--    </Logger>-->
+    <Logger name="org.corant.aliyun.oss.demo" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="RollingFile"/>
+    </Logger>
   </Loggers>
 </Configuration>
