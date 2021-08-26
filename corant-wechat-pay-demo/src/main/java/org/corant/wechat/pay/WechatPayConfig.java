@@ -46,27 +46,22 @@ public class WechatPayConfig extends WXPayConfig {
     return useSandbox;
   }
 
-  @Override
   protected String getAppID() {
     return appId;
   }
 
-  @Override
   protected InputStream getCertStream() {
     return null;
   }
 
-  @Override
   protected String getKey() {
     return key;
   }
 
-  @Override
   protected String getMchID() {
     return mchId;
   }
 
-  @Override
   protected IWXPayDomain getWXPayDomain() {
     return new IWXPayDomain() {
       @Override

@@ -1,12 +1,17 @@
 package org.corant.demo;
 
-import org.corant.suites.cloud.tencent.wechat.WechatOAuthClient;
-import org.corant.suites.cloud.tencent.wechat.WechatOAuthConfig;
+import org.corant.modules.cloud.tencent.wechat.oauth.WechatOAuthClient;
+import org.corant.modules.cloud.tencent.wechat.oauth.WechatOAuthConfig;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.UnsupportedEncodingException;

@@ -1,14 +1,13 @@
 import org.corant.demo.App;
 import org.corant.devops.test.unit.CorantJUnit4ClassRunner;
 import org.corant.devops.test.unit.RunConfig;
-import org.corant.suites.cloud.tencent.wechat.WechatOAuthClient;
-import org.corant.suites.cloud.tencent.wechat.WechatOAuthConfig;
+import org.corant.modules.cloud.tencent.wechat.oauth.WechatOAuthClient;
+import org.corant.modules.cloud.tencent.wechat.oauth.WechatOAuthConfig;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
-import java.util.Map;
 
 /**
  * corant <br>
