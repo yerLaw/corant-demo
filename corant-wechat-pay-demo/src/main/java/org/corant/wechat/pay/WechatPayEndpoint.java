@@ -2,7 +2,7 @@ package org.corant.wechat.pay;
 
 import com.github.wxpay.sdk.WXPay;
 import com.github.wxpay.sdk.WXPayUtil;
-import org.corant.suites.json.JsonUtils;
+import org.corant.modules.json.Jsons;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -43,7 +43,7 @@ public class WechatPayEndpoint {
   @Path("/notify")
   @Consumes(MediaType.APPLICATION_XML)
   public Response notify(WechatNotifyXMLVO xmlvo) throws Exception {
-    Map map = JsonUtils.copyMapper().convertValue(xmlvo, Map.class);
+    Map map = Jsons.copyMapper().convertValue(xmlvo, Map.class);
     return Response.ok(WXPayUtil.mapToXml(map)).build();
   }
 
