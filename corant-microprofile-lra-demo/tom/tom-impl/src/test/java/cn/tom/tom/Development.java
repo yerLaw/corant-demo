@@ -1,6 +1,6 @@
 package cn.tom.tom;
 
-import org.corant.suites.jpa.hibernate.HibernateOrmDeveloperKits;
+import org.corant.modules.jpa.hibernate.orm.HibernateOrmDeveloperKits;
 
 /**
  * cps-opms <br>

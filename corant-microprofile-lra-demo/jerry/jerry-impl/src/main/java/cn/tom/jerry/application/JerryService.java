@@ -3,8 +3,8 @@ package cn.tom.jerry.application;
 import cn.tom.jerry.domain.Jerry;
 import org.asosat.ddd.application.service.AbstractApplicationService;
 import org.asosat.shared.Param;
-import org.corant.suites.ddd.annotation.stereotype.ApplicationServices;
-import org.corant.suites.ddd.repository.JPARepository;
+import org.corant.modules.ddd.annotation.ApplicationServices;
+import org.corant.modules.ddd.shared.repository.JPARepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

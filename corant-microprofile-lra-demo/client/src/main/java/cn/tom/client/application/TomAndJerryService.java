@@ -3,7 +3,7 @@ package cn.tom.client.application;
 import cn.tom.jerry.api.JerryAPIClient;
 import cn.tom.tom.api.client.TomAPIClient;
 import org.asosat.ddd.application.service.AbstractApplicationService;
-import org.corant.suites.ddd.annotation.stereotype.ApplicationServices;
+import org.corant.modules.ddd.annotation.ApplicationServices;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.enterprise.context.ApplicationScoped;

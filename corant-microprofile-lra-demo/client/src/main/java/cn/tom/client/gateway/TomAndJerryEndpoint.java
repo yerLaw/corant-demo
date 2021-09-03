@@ -9,7 +9,12 @@ import org.eclipse.microprofile.lra.annotation.ws.rs.LRA;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 import java.math.BigDecimal;
 import java.util.Map;
@@ -102,8 +107,8 @@ public class TomAndJerryEndpoint extends AbstractRests {
   public Response tomCatchJerry(
       @HeaderParam(LRA.LRA_HTTP_CONTEXT_HEADER) String lraIdUrl, Map<String, Object> cmd) {
     String lraId = lraIdUrl.substring(lraIdUrl.lastIndexOf('/') + 1);
-    Map jerryCmd = getMapMap(cmd, "jerry");
-    Map tomCmd = getMapMap(cmd, "tom");
+    Map<String, Object> jerryCmd = getMapMap(cmd, "jerry");
+    Map<String, Object> tomCmd = getMapMap(cmd, "tom");
     jerryCmd.put("lraId", lraId);
     tomCmd.put("lraId", lraId);
     service.createJerry(jerryCmd);
