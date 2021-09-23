@@ -18,7 +18,6 @@
     <modules>
         <module>corant-jcache-caffeine-demo</module>
         <module>corant-microprofile-restclient-demo</module>
-        <module>corant-microprofile-lra-demo</module>
         <module>corant-jcache-redisson-demo</module>
         <module>corant-microprofile-config-demo</module>
         <module>corant-alipay-demo</module>
@@ -29,7 +28,6 @@
         <module>corant-jms-demo</module>
         <module>corant-jpa-demo</module>
         <module>corant-query-demo</module>
-        <module>corant-experiment</module>
         <module>corant-aliyun-oss-demo</module>
     </modules>
 
