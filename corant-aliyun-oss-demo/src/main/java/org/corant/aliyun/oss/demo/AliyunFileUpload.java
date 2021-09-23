@@ -1,6 +1,7 @@
 package org.corant.aliyun.oss.demo;
 
 import org.corant.modules.cloud.alibaba.oss.OSSStorageService;
+import org.corant.shared.resource.FileSystemResource;
 import org.corant.shared.util.Resources;
 import org.corant.shared.util.Retry;
 import org.corant.shared.util.Texts;
@@ -81,7 +82,7 @@ public class AliyunFileUpload {
   private void doUpload(String brdId, String fileId, String fmt, File file) {
     String store =
         storageService.store(
-            fileId, new Resources.FileSystemResource(file), "brdId", brdId, "fmt", fmt);
+            fileId, new FileSystemResource(file), "brdId", brdId, "fmt", fmt);
     logger.info("upload===============" + brdId + ";" + store);
   }
 }
