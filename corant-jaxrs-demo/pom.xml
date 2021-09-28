@@ -31,6 +31,11 @@
             <artifactId>corant-modules-logging</artifactId>
             <version>${version.corant}</version>
         </dependency>
+        <dependency>
+            <groupId>org.corant</groupId>
+            <artifactId>corant-modules-jta-shared</artifactId>
+            <version>${version.corant}</version>
+        </dependency>
     </dependencies>
 
 </project>
